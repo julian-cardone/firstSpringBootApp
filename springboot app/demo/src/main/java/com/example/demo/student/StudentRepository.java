@@ -8,5 +8,4 @@ public interface StudentRepository extends JpaRepository<Student, Long> {   //da
 
     //data access layer. student repository
 
-
 }
