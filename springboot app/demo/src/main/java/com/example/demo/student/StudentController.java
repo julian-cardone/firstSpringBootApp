@@ -18,19 +18,31 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    //get
     @GetMapping
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
 
+    //post
     @PostMapping
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
     }
 
+    //delete
     @DeleteMapping(path = "{studentId}")       //api/v1/student/3 <-- where 3 is the id that is extracted from the params and then deleted from the db
     public void deleteStudent(@PathVariable("studentId") Long studentId){
         studentService.deleteStudent(studentId);
+    }
+
+    //update, put
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email) {
+                studentService.updateStudent(studentId, name, email);
     }
 
 }
