@@ -1,6 +1,6 @@
 package com.example.demo.student;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -12,9 +12,15 @@ import java.util.List;
 @Service    //aka component
 public class StudentService {
 
-    //ideally, this info would come from a database
+    private final StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
     public List<Student> getStudents() {
-        return List.of(new Student(1, "Jo", "jo.jo@mail.com", LocalDate.of(1999, Month.APRIL, 5),23));
+        return studentRepository.findAll();
     }
 
 }
