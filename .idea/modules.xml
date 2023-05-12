@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/clGPT.iml" filepath="$PROJECT_DIR$/.idea/clGPT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/firstSpringBootApp.iml" filepath="$PROJECT_DIR$/.idea/firstSpringBootApp.iml" />
     </modules>
   </component>
 </project>

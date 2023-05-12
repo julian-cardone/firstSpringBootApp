@@ -1,11 +1,15 @@
 package com.example.demo.student;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
 
 //this is the service layer. It is responsible for all business logic.
+@Service    //aka component
 public class StudentService {
 
     //ideally, this info would come from a database
