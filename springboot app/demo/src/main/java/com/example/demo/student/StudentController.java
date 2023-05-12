@@ -28,4 +28,9 @@ public class StudentController {
         studentService.addNewStudent(student);
     }
 
+    @DeleteMapping(path = "{studentId}")       //api/v1/student/3 <-- where 3 is the id that is extracted from the params and then deleted from the db
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
+    }
+
 }
