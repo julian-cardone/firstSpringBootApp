@@ -39,7 +39,7 @@ public class StudentService {
         }
         studentRepository.deleteById(studentId);
     }
-
+        //hibernate datta lifecycle, spring data jps : should learn these two things
     @Transactional
     public void updateStudent(Long studentId, String name, String email) {
         Student student = studentRepository.findById(studentId)
